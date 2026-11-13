@@ -1,1 +1,17 @@
-me olvide el gitnore
+# Archivos obligatorios de la Guía G-05
+.env
+*.log
+Thumbs.db
+.DS_Store
+
+# Configuración del editor Visual Studio Code
+.vscode/
+
+# Dependencias y paquetes (si llegan a usar Node o herramientas)
+node_modules/
+
+# Archivos temporales y respaldos del sistema
+*.tmp
+*.bak
+*.swp
+desktop.ini

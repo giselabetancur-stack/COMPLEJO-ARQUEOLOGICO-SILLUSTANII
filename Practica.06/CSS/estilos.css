@@ -1,0 +1,1401 @@
+
+/* =====================================================
+   SILLUSTANI VIDEOS
+   Diseño visual: rosado, elegante y moderno
+   ===================================================== */
+
+
+/* =====================================================
+   1. VARIABLES DE COLORES
+   ===================================================== */
+
+:root {
+    --rosa-principal: #e94b9b;
+    --rosa-fuerte: #d92d87;
+    --rosa-medio: #f28abd;
+    --rosa-claro: #fce4f1;
+    --rosa-suave: #fff1f8;
+
+    --lila: #e9ddf8;
+    --lila-claro: #f6f0ff;
+
+    --blanco: #ffffff;
+    --fondo: #fff8fc;
+
+    --texto: #302536;
+    --texto-secundario: #786b7b;
+
+    --borde: #f1d5e5;
+
+    --sombra:
+        0 8px 25px rgba(202, 83, 151, 0.12);
+
+    --sombra-hover:
+        0 12px 30px rgba(202, 83, 151, 0.20);
+
+    --radio: 18px;
+}
+
+
+/* =====================================================
+   2. CONFIGURACIÓN GENERAL
+   ===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        "Segoe UI",
+        "Trebuchet MS",
+        Arial,
+        sans-serif;
+
+    background: var(--fondo);
+    color: var(--texto);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: var(--texto);
+}
+
+p {
+    color: var(--texto-secundario);
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+section {
+    scroll-margin-top: 130px;
+}
+
+.oculto {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+
+/* =====================================================
+   3. ENCABEZADO
+   ===================================================== */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--borde);
+    box-shadow: 0 3px 15px rgba(210, 110, 166, 0.08);
+}
+
+
+/* BARRA SUPERIOR */
+
+.barra-superior {
+    max-width: 1250px;
+    margin: auto;
+    padding: 14px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* LOGOTIPO */
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.logo {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 16px;
+
+    background: linear-gradient(
+        135deg,
+        #ed83bb,
+        #d93b91
+    );
+
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: bold;
+
+    box-shadow: 0 5px 13px rgba(217, 45, 135, 0.25);
+}
+
+.marca-texto {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.marca-texto strong {
+    font-family: Georgia, serif;
+    font-size: 22px;
+    font-style: italic;
+    color: #42243d;
+}
+
+.marca-texto small {
+    font-size: 11px;
+    color: var(--rosa-fuerte);
+    letter-spacing: 0.5px;
+}
+
+
+/* =====================================================
+   4. BUSCADOR
+   ===================================================== */
+
+.buscador {
+    display: flex;
+    width: 340px;
+
+    border: 1px solid var(--borde);
+    border-radius: 30px;
+    overflow: hidden;
+
+    background: var(--rosa-suave);
+    transition: 0.3s;
+}
+
+.buscador:focus-within {
+    border-color: var(--rosa-principal);
+    box-shadow: 0 0 0 3px rgba(233, 75, 155, 0.12);
+}
+
+.buscador input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 11px 17px;
+
+    background: transparent;
+    color: var(--texto);
+}
+
+.buscador input::placeholder {
+    color: #aa91a3;
+}
+
+.buscador button {
+    border: none;
+    padding: 0 17px;
+
+    background: var(--rosa-principal);
+    color: white;
+
+    transition: 0.3s;
+}
+
+.buscador button:hover {
+    background: var(--rosa-fuerte);
+}
+
+
+/* =====================================================
+   5. MENÚ DE NAVEGACIÓN
+   ===================================================== */
+
+.navegacion {
+    border-top: 1px solid #f8e8f1;
+}
+
+.navegacion ul {
+    max-width: 1250px;
+    margin: auto;
+    padding: 10px 35px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    list-style: none;
+}
+
+.enlace {
+    display: block;
+    padding: 9px 19px;
+    border-radius: 25px;
+
+    color: #514151;
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+.enlace:hover {
+    background: var(--rosa-claro);
+    color: var(--rosa-fuerte);
+}
+
+.enlace.activo {
+    background: var(--rosa-principal);
+    color: white;
+    box-shadow: 0 4px 12px rgba(233, 75, 155, 0.25);
+}
+
+.enlace.activo:hover {
+    background: var(--rosa-fuerte);
+}
+
+
+/* BOTÓN DEL MENÚ MÓVIL */
+
+.menu-movil {
+    display: none;
+    border: none;
+    background: transparent;
+    color: var(--rosa-fuerte);
+    font-size: 30px;
+}
+
+
+/* =====================================================
+   6. PORTADA PRINCIPAL
+   ===================================================== */
+
+.portada {
+    position: relative;
+    width: 100%;
+    min-height: 540px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    background: #8b667c;
+}
+
+.imagen-portada {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center 55%;
+
+    transition: opacity 0.5s ease;
+}
+
+/* IDENTIFICADOR DE LA IMAGEN DEL CARRUSEL */
+
+#imagen-sillustani {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fondo-portada {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        90deg,
+        rgba(37, 20, 35, 0.76) 0%,
+        rgba(48, 24, 43, 0.48) 45%,
+        rgba(48, 24, 43, 0.04) 100%
+    );
+}
+
+.contenido-portada {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 80px 50px;
+
+    color: white;
+}
+
+.subtitulo-portada {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.contenido-portada h1 {
+    color: white;
+    font-size: clamp(55px, 8vw, 90px);
+    font-style: italic;
+    line-height: 1.15;
+    margin: 0 0 12px;
+
+    text-shadow: 2px 3px 12px rgba(0, 0, 0, 0.4);
+}
+
+.frase-portada {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 28px;
+}
+
+.boton-principal {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+
+    padding: 13px 26px;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #f18abd,
+        #dc338e
+    );
+
+    color: white;
+    font-weight: bold;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+    transition: 0.3s;
+}
+
+.boton-principal:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 22px rgba(0, 0, 0, 0.25);
+}
+
+.boton-principal span {
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   INDICADORES DEL CARRUSEL DE IMÁGENES
+   ===================================================== */
+
+.indicadores {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    z-index: 3;
+}
+
+/* BOTONES CIRCULARES */
+
+.punto {
+    appearance: none;
+    -webkit-appearance: none;
+
+    display: block;
+    flex: 0 0 auto;
+
+    width: 11px;
+    height: 11px;
+
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+
+    background-color: #e9b8d3;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* EFECTO AL PASAR EL CURSOR */
+
+.punto:hover {
+    background-color: #d92d87;
+    transform: scale(1.2);
+}
+
+/* INDICADOR DE LA IMAGEN ACTUAL */
+
+.punto.seleccionado {
+    width: 28px;
+    border-radius: 10px;
+    background-color: #d92d87;
+}
+
+
+/* =====================================================
+   7. SECCIONES GENERALES
+   ===================================================== */
+
+.seccion {
+    max-width: 1200px;
+    margin: auto;
+    padding: 75px 35px;
+}
+
+.encabezado-seccion {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.encabezado-seccion h2 {
+    font-size: 34px;
+    color: #42283e;
+    margin-bottom: 3px;
+}
+
+.encabezado-seccion p {
+    font-size: 15px;
+}
+
+.encabezado-seccion.centrado {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 4px;
+    margin-bottom: 35px;
+}
+
+.encabezado-seccion.centrado h2 {
+    font-size: 36px;
+}
+
+.icono-seccion {
+    width: 53px;
+    height: 53px;
+
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    background: var(--rosa-claro);
+    color: var(--rosa-fuerte);
+    font-size: 27px;
+}
+
+
+/* =====================================================
+   8. HISTORIA Y CULTURA
+   ===================================================== */
+
+.historia {
+    background: white;
+    border-radius: 0 0 25px 25px;
+}
+
+.contenido-historia {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+}
+
+.texto-historia h3 {
+    font-size: 25px;
+    margin-bottom: 18px;
+    color: var(--rosa-fuerte);
+}
+
+.texto-historia p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.imagen-historia img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+    border: 5px solid white;
+}
+
+.boton-secundario {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 11px 23px;
+
+    border-radius: 25px;
+    background: var(--rosa-claro);
+    color: var(--rosa-fuerte);
+
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-secundario:hover {
+    background: var(--rosa-principal);
+    color: white;
+}
+
+
+/* =====================================================
+   9. GALERÍA
+   ===================================================== */
+
+.galeria {
+    background: linear-gradient(
+        180deg,
+        #fff5fa,
+        #f9f2ff
+    );
+
+    max-width: none;
+
+    padding-left: max(35px, calc((100% - 1130px) / 2));
+    padding-right: max(35px, calc((100% - 1130px) / 2));
+}
+
+.categorias-galeria {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 35px;
+    flex-wrap: wrap;
+}
+
+.categoria {
+    padding: 10px 25px;
+
+    border: 1px solid #e7d7eb;
+    border-radius: 25px;
+
+    background: white;
+    color: #57445d;
+
+    font-weight: 600;
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+.categoria:hover {
+    background: var(--rosa-claro);
+    color: var(--rosa-fuerte);
+}
+
+.categoria.activa {
+    background: var(--rosa-principal);
+    border-color: var(--rosa-principal);
+    color: white;
+}
+
+
+/* CUADRÍCULA DE VIDEOS */
+
+.cuadricula-videos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 23px;
+}
+
+.tarjeta-video {
+    min-width: 0;
+    overflow: hidden;
+
+    background: white;
+    border: 1px solid var(--borde);
+    border-radius: var(--radio);
+
+    box-shadow: var(--sombra);
+    transition: 0.3s;
+}
+
+.tarjeta-video:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--sombra-hover);
+}
+
+.miniatura {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+}
+
+.miniatura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.tarjeta-video:hover .miniatura img {
+    transform: scale(1.07);
+}
+
+.duracion {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+
+    padding: 4px 8px;
+    border-radius: 6px;
+
+    background: rgba(44, 28, 42, 0.85);
+    color: white;
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.informacion-video {
+    padding: 17px;
+}
+
+.informacion-video h3 {
+    font-family: "Segoe UI", sans-serif;
+    font-size: 16px;
+    line-height: 1.4;
+    margin-bottom: 9px;
+    color: #39283a;
+}
+
+.canal {
+    color: var(--rosa-fuerte);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 3px;
+}
+
+.datos {
+    color: #9b8b9b;
+    font-size: 12px;
+}
+
+
+/* SUBTÍTULO DE GALERÍA */
+
+.subtitulo-galeria {
+    margin: 45px 0 22px;
+}
+
+.subtitulo-galeria h3 {
+    font-size: 24px;
+    color: var(--rosa-fuerte);
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   10. VISITA SILLUSTANI
+   ===================================================== */
+
+.visita {
+    background: white;
+}
+
+.contenido-visita {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+
+    padding: 25px;
+    border-radius: 25px;
+    background: var(--rosa-suave);
+}
+
+.texto-visita h3 {
+    color: var(--rosa-fuerte);
+    font-size: 27px;
+    margin-bottom: 15px;
+}
+
+.texto-visita p {
+    line-height: 1.9;
+    margin-bottom: 22px;
+}
+
+.imagen-visita img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+    border-radius: 20px;
+    box-shadow: var(--sombra);
+}
+
+
+/* =====================================================
+   11. NOTICIAS Y EVENTOS
+   ===================================================== */
+
+.noticias {
+    max-width: none;
+
+    background: linear-gradient(
+        135deg,
+        #fff2f8,
+        #f5edff
+    );
+
+    padding-left: max(35px, calc((100% - 1130px) / 2));
+    padding-right: max(35px, calc((100% - 1130px) / 2));
+}
+
+.contenedor-noticias {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.tarjeta-noticia {
+    display: grid;
+    grid-template-columns: 42% 1fr;
+    gap: 20px;
+
+    padding: 14px;
+    border: 1px solid var(--borde);
+    border-radius: 20px;
+
+    background: white;
+    box-shadow: var(--sombra);
+    transition: 0.3s;
+}
+
+.tarjeta-noticia:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra-hover);
+}
+
+.tarjeta-noticia img {
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.contenido-noticia {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contenido-noticia h3 {
+    font-size: 20px;
+    margin-bottom: 9px;
+    color: #42283e;
+}
+
+.contenido-noticia p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.contenido-noticia .fecha-noticia {
+    color: var(--rosa-fuerte);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.boton-noticia {
+    display: inline-block;
+    margin-top: auto;
+    padding: 9px 17px;
+
+    border-radius: 22px;
+    background: var(--rosa-principal);
+    color: white;
+
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.boton-noticia:hover {
+    background: var(--rosa-fuerte);
+}
+
+
+/* =====================================================
+   12. FORMULARIO DE CONTACTO
+   ===================================================== */
+
+.contacto {
+    background: white;
+}
+
+.contenedor-formulario {
+    max-width: 900px;
+    margin: auto;
+
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 30px;
+
+    padding: 28px;
+    border: 1px solid var(--borde);
+    border-radius: 25px;
+
+    background: linear-gradient(
+        135deg,
+        #fff5fa,
+        #f8f1ff
+    );
+
+    box-shadow: var(--sombra);
+}
+
+.mensaje-contacto {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.mensaje-contacto h3 {
+    font-size: 28px;
+    color: var(--rosa-fuerte);
+    margin-bottom: 18px;
+}
+
+.mensaje-contacto p {
+    margin-bottom: 13px;
+    line-height: 1.8;
+}
+
+.decoracion-corazon {
+    margin-top: 20px;
+    color: var(--rosa-medio);
+    font-size: 75px;
+    text-align: center;
+}
+
+
+/* FORMULARIO */
+
+.formulario {
+    padding: 25px;
+    border-radius: 20px;
+
+    background: white;
+    box-shadow: 0 5px 18px rgba(180, 90, 150, 0.09);
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-bottom: 16px;
+}
+
+.campo label {
+    font-size: 14px;
+    font-weight: 700;
+    color: #493448;
+}
+
+.campo label span {
+    color: var(--rosa-fuerte);
+}
+
+.campo input,
+.campo select,
+.campo textarea {
+    width: 100%;
+    padding: 12px 14px;
+
+    border: 1px solid #e6d6e4;
+    border-radius: 10px;
+
+    background: #fffafd;
+    color: var(--texto);
+
+    outline: none;
+    transition: 0.3s;
+}
+
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus {
+    border-color: var(--rosa-principal);
+    box-shadow: 0 0 0 3px rgba(233, 75, 155, 0.12);
+    background: white;
+}
+
+.campo textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+.campo input::placeholder,
+.campo textarea::placeholder {
+    color: #b5a4b3;
+}
+
+
+/* PRIVACIDAD */
+
+.privacidad {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 15px 0;
+}
+
+.privacidad input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--rosa-principal);
+}
+
+.privacidad label {
+    font-size: 12px;
+    color: var(--texto-secundario);
+}
+
+
+/* BOTÓN DE ENVÍO */
+
+.boton-enviar {
+    width: 100%;
+    padding: 13px;
+
+    border: none;
+    border-radius: 30px;
+
+    background: linear-gradient(
+        135deg,
+        #ee83b8,
+        #d82c89
+    );
+
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+
+    box-shadow: 0 5px 14px rgba(217, 45, 135, 0.20);
+    transition: 0.3s;
+}
+
+.boton-enviar:hover {
+    background: var(--rosa-fuerte);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-hover);
+}
+
+.mensaje-resultado {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #39875c;
+}
+
+.nota-formulario {
+    margin-top: 12px;
+    font-size: 11px;
+    text-align: center;
+    color: #a28fa1;
+}
+
+
+/* =====================================================
+   13. PIE DE PÁGINA
+   ===================================================== */
+
+.pie-pagina {
+    background: linear-gradient(
+        135deg,
+        #492d48,
+        #302236
+    );
+
+    color: white;
+}
+
+.contenido-footer {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 35px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 35px;
+}
+
+.pie-pagina h2 {
+    color: #ffabd4;
+    font-size: 27px;
+    font-style: italic;
+    margin-bottom: 12px;
+}
+
+.pie-pagina h3 {
+    color: #ffabd4;
+    font-size: 17px;
+    margin-bottom: 15px;
+}
+
+.pie-pagina p {
+    color: #e7dbe7;
+    font-size: 13px;
+    margin-bottom: 8px;
+}
+
+.pie-pagina a {
+    color: #f8c1df;
+    transition: 0.3s;
+}
+
+.pie-pagina a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    text-align: center;
+}
+
+.copyright p {
+    font-size: 11px;
+    margin-bottom: 5px;
+}
+
+
+/* =====================================================
+   14. ACCESIBILIDAD Y MOVIMIENTO
+   ===================================================== */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #9a55bb;
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+
+/* =====================================================
+   15. TABLET
+   ===================================================== */
+
+@media (max-width: 950px) {
+    .cuadricula-videos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .contenedor-noticias {
+        grid-template-columns: 1fr;
+    }
+
+    .barra-superior {
+        padding: 12px 22px;
+    }
+
+    .seccion {
+        padding: 60px 25px;
+    }
+}
+
+
+/* =====================================================
+   16. CELULARES
+   ===================================================== */
+
+@media (max-width: 650px) {
+    .barra-superior {
+        padding: 12px 17px;
+        gap: 10px;
+    }
+
+    .marca-texto strong {
+        font-size: 19px;
+    }
+
+    .logo {
+        width: 43px;
+        height: 43px;
+        font-size: 19px;
+    }
+
+    .buscador {
+        display: none;
+    }
+
+    .menu-movil {
+        display: block;
+    }
+
+    .navegacion {
+        display: none;
+    }
+
+    .navegacion.abierta {
+        display: block;
+    }
+
+    .navegacion ul {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px 18px;
+        gap: 5px;
+    }
+
+    .enlace {
+        text-align: center;
+    }
+
+
+    /* PORTADA */
+
+    .portada {
+        min-height: 470px;
+    }
+
+    .imagen-portada {
+        object-position: center;
+    }
+
+    .fondo-portada {
+        background: linear-gradient(
+            90deg,
+            rgba(37, 20, 35, 0.78),
+            rgba(48, 24, 43, 0.30)
+        );
+    }
+
+    .contenido-portada {
+        padding: 50px 24px;
+    }
+
+    .subtitulo-portada {
+        font-size: 18px;
+    }
+
+    .contenido-portada h1 {
+        font-size: 55px;
+    }
+
+    .frase-portada {
+        font-size: 19px;
+        max-width: 280px;
+    }
+
+
+    /* SECCIONES */
+
+    .seccion {
+        padding: 48px 18px;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 27px;
+    }
+
+    .encabezado-seccion.centrado h2 {
+        font-size: 29px;
+    }
+
+    .icono-seccion {
+        width: 43px;
+        height: 43px;
+        font-size: 22px;
+    }
+
+
+    /* HISTORIA */
+
+    .contenido-historia {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .imagen-historia img {
+        height: 240px;
+    }
+
+
+    /* GALERÍA */
+
+    .categorias-galeria {
+        gap: 8px;
+    }
+
+    .categoria {
+        padding: 9px 15px;
+        font-size: 12px;
+    }
+
+    .cuadricula-videos {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .informacion-video h3 {
+        font-size: 16px;
+    }
+
+
+    /* VISITA */
+
+    .contenido-visita {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .imagen-visita img {
+        height: 220px;
+    }
+
+
+    /* NOTICIAS */
+
+    .tarjeta-noticia {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+
+    .tarjeta-noticia img {
+        height: 200px;
+        min-height: auto;
+    }
+
+    .contenido-noticia h3 {
+        font-size: 19px;
+    }
+
+    .boton-noticia {
+        margin-top: 5px;
+    }
+
+
+    /* FORMULARIO */
+
+    .contenedor-formulario {
+        grid-template-columns: 1fr;
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .mensaje-contacto {
+        padding: 15px;
+    }
+
+    .mensaje-contacto h3 {
+        font-size: 24px;
+    }
+
+    .decoracion-corazon {
+        font-size: 45px;
+        margin-top: 5px;
+    }
+
+    .formulario {
+        padding: 18px;
+    }
+
+
+    /* FOOTER */
+
+    .contenido-footer {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 35px 22px;
+    }
+
+    .copyright {
+        padding: 18px 12px;
+    }
+}
+
+
+/* =====================================================
+   17. PANTALLAS MUY PEQUEÑAS
+   ===================================================== */
+
+@media (max-width: 380px) {
+    .contenido-portada h1 {
+        font-size: 44px;
+    }
+
+    .subtitulo-portada {
+        font-size: 16px;
+    }
+
+    .frase-portada {
+        font-size: 17px;
+    }
+
+    .encabezado-seccion h2 {
+        font-size: 24px;
+    }
+}

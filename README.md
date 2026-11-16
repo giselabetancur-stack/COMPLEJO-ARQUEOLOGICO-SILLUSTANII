@@ -60,3 +60,39 @@ Sillustani-Videos/
 ## Nota
 
 Proyecto desarrollado con fines académicos y educativos.
+
+///
+///
+///
+///
+///
+///
+///
+///
+///
+///
+## Contenido de la práctica
+
+Los scripts están en `js/script.js`:
+
+- **Menú móvil:** abre y cierra el menú con `classList.toggle`, cambia su texto con `textContent` y actualiza el atributo `aria-expanded`.
+- **Buscador de videos:** filtra las tarjetas según el texto escrito.
+- **Formulario de contacto:** valida los campos y muestra un mensaje con `textContent`.
+- **Carrusel de imágenes:** cambia la imagen de portada con indicadores y cambio automático.
+- **Datos de Sillustani:** sección creada a partir de un arreglo de objetos, con `createElement`, `textContent` y `append`, y un resumen con el total de datos.
+
+## Uso de inteligencia artificial
+
+Se usaron herramientas de IA generativa como apoyo en esta práctica:
+
+- **Claude (Anthropic):** revisión del código, sugerencias de mejora para la lista de verificación P-04 y orientación sobre el formato de las plantillas.
+- **Gemini (Google) y ChatGPT (OpenAI):** parafraseo y mejora de la redacción de textos.
+
+El equipo revisó el código y los textos generados con estas herramientas y puede explicarlos con sus propias palabras.
+
+## Cómo probar
+
+1. Abrir `index.html` en el navegador.
+2. Presionar F12 y abrir la pestaña Consola para comprobar que no hay errores.
+   Curso: Desarrollo Basado en Plataformas I (SIS302) · UNA-Puno · 2026-II
+

@@ -1,0 +1,22 @@
+[
+  {
+    "titulo": "Ubicación",
+    "descripcion": "El complejo arqueológico de Sillustani se encuentra cerca de la ciudad de Puno.",
+    "categoria": "Patrimonio"
+  },
+  {
+    "titulo": "Chullpas",
+    "descripcion": "Son construcciones funerarias de piedra que destacan por su arquitectura.",
+    "categoria": "Arquitectura"
+  },
+  {
+    "titulo": "Lago Umayo",
+    "descripcion": "Sillustani se encuentra junto al hermoso lago Umayo.",
+    "categoria": "Naturaleza"
+  },
+  {
+    "titulo": "Cultura Kolla",
+    "descripcion": "El sitio arqueológico está relacionado con la cultura Kolla.",
+    "categoria": "Historia"
+  }
+]

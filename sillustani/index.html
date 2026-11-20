@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 
@@ -10,6 +9,7 @@
         content="Descubre el Complejo Arqueológico de Sillustani, su historia, cultura, chullpas y paisajes de la laguna Umayo.">
 
     <meta name="author" content="Equipo Sillustani Videos">
+    <meta name="theme-color" content="#d92d87">
 
     <title>Sillustani Videos | Historia que inspira</title>
 
@@ -17,6 +17,8 @@
 </head>
 
 <body>
+
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
 
     <!-- =========================================
          ENCABEZADO Y NAVEGACIÓN
@@ -38,11 +40,11 @@
 
             </a>
 
-            <!-- BUSCADOR -->
+            <!-- BUSCADOR (filtra el catálogo) -->
             <form class="buscador" id="buscador" action="#galeria" role="search">
 
                 <label class="oculto" for="buscar">
-                    Buscar contenido
+                    Buscar en el catálogo de videos y fotografías
                 </label>
 
                 <input
@@ -50,6 +52,7 @@
                     id="buscar"
                     name="q"
                     placeholder="Buscar en Sillustani..."
+                    autocomplete="off"
                 >
 
                 <button type="submit" aria-label="Buscar">
@@ -77,31 +80,12 @@
         <nav class="navegacion" id="navegacion" aria-label="Navegación principal">
 
             <ul>
-
-                <li>
-                    <a href="#inicio" class="enlace activo">Inicio</a>
-                </li>
-
-                <li>
-                    <a href="#historia" class="enlace">Conoce</a>
-                </li>
-
-                <li>
-                    <a href="#galeria" class="enlace">Galería</a>
-                </li>
-
-                <li>
-                    <a href="#visita" class="enlace">Visita</a>
-                </li>
-
-                <li>
-                    <a href="#noticias" class="enlace">Noticias</a>
-                </li>
-
-                <li>
-                    <a href="#contacto" class="enlace">Contacto</a>
-                </li>
-
+                <li><a href="#inicio" class="enlace activo" aria-current="true">Inicio</a></li>
+                <li><a href="#historia" class="enlace">Conoce</a></li>
+                <li><a href="#galeria" class="enlace">Galería</a></li>
+                <li><a href="#visita" class="enlace">Visita</a></li>
+                <li><a href="#noticias" class="enlace">Noticias</a></li>
+                <li><a href="#contacto" class="enlace">Contacto</a></li>
             </ul>
 
         </nav>
@@ -113,7 +97,7 @@
          CONTENIDO PRINCIPAL
     ========================================== -->
 
-    <main>
+    <main id="contenido" tabindex="-1">
 
         <!-- =====================================
              1. PORTADA PRINCIPAL
@@ -122,13 +106,14 @@
         <section class="portada" aria-labelledby="titulo-portada">
 
             <img
-            id="imagen-sillustani"
-            class="imagen-portada"
-            src="img/sillustani.jpg"
-            alt="Complejo arqueológico de Sillustani"
-            width="1600"
-            height="900"
->
+                id="imagen-sillustani"
+                class="imagen-portada"
+                src="img/sillustani.jpg"
+                alt="Complejo arqueológico de Sillustani"
+                width="1600"
+                height="900"
+                fetchpriority="high"
+            >
 
             <div class="fondo-portada"></div>
 
@@ -152,8 +137,8 @@
 
             </div>
 
-            <div class="indicadores" aria-label="Indicadores de imágenes">
-                <button type="button" class="punto seleccionado" data-indice="0" aria-label="Mostrar imagen 1"></button>
+            <div class="indicadores" role="group" aria-label="Imágenes de la portada">
+                <button type="button" class="punto seleccionado" data-indice="0" aria-label="Mostrar imagen 1" aria-current="true"></button>
                 <button type="button" class="punto" data-indice="1" aria-label="Mostrar imagen 2"></button>
                 <button type="button" class="punto" data-indice="2" aria-label="Mostrar imagen 3"></button>
                 <button type="button" class="punto" data-indice="3" aria-label="Mostrar imagen 4"></button>
@@ -163,7 +148,7 @@
 
 
         <!-- =====================================
-             2. HISTORIA Y CULTURA
+             2. HISTORIA Y CULTURA  (RF-01 / HU-01)
         ====================================== -->
 
         <section class="seccion historia" id="historia">
@@ -229,11 +214,77 @@
 
             </div>
 
+
+            <!-- RESEÑA HISTÓRICA -->
+            <div class="resena">
+
+                <h3>Reseña histórica</h3>
+
+                <ol class="linea-tiempo">
+                    <li>
+                        <strong>Ocupación Tiwanaku</strong>
+                        <span>Se registra presencia Tiwanaku en los alrededores del complejo.</span>
+                    </li>
+                    <li>
+                        <strong>Reino Qolla (Colla)</strong>
+                        <span>La península de Umayo fue un importante asentamiento del Reino Qolla, que destacó por la construcción de chullpas.</span>
+                    </li>
+                    <li>
+                        <strong>Influencia inca</strong>
+                        <span>Algunas construcciones muestran influencia inca.</span>
+                    </li>
+                </ol>
+
+            </div>
+
+
+            <!-- DATOS DE INTERÉS TURÍSTICO -->
+            <h3 class="titulo-bloque">Datos de interés</h3>
+
+            <div class="datos-interes">
+
+                <article class="dato-card">
+                    <span class="dato-icono" aria-hidden="true">📍</span>
+                    <h4>Ubicación</h4>
+                    <p>Distrito de Atuncolla, provincia y departamento de Puno, a unos 31 km de la ciudad de Puno, junto a la laguna Umayo.</p>
+                </article>
+
+                <article class="dato-card">
+                    <span class="dato-icono" aria-hidden="true">🏛️</span>
+                    <h4>Tipo de sitio</h4>
+                    <p>Sitio arqueológico de tipo cementerio: un complejo funerario formado por torres de piedra o chullpas.</p>
+                </article>
+
+                <article class="dato-card">
+                    <span class="dato-icono" aria-hidden="true">🪨</span>
+                    <h4>Las chullpas</h4>
+                    <p>Hay distintos tipos, según materiales, técnicas, formas y acabados: desde bloques de piedra labrados hasta mampostería irregular.</p>
+                </article>
+
+                <article class="dato-card">
+                    <span class="dato-icono" aria-hidden="true">🏺</span>
+                    <h4>Museo de sitio</h4>
+                    <p>Reúne colecciones relacionadas con las culturas Colla, Tiwanaku e Inca: cerámica, textiles, metales y materiales líticos.</p>
+                </article>
+
+                <article class="dato-card">
+                    <span class="dato-icono" aria-hidden="true">📷</span>
+                    <h4>Qué se puede hacer</h4>
+                    <p>Fotografía y filmación, observación del paisaje, de flora y fauna, caminatas y trekking.</p>
+                </article>
+
+            </div>
+
+            <p class="fuentes">
+                Fuentes: fichas del MINCETUR y del Ministerio de Cultura, guía técnica del MEF
+                y Guía de Museos del Perú 2023 (análisis documental).
+            </p>
+
         </section>
 
 
         <!-- =====================================
-             3. GALERÍA DE VIDEOS
+             3. CATÁLOGO AUDIOVISUAL  (RF-02, RF-03 / HU-02, HU-03)
         ====================================== -->
 
         <section class="seccion galeria" id="galeria">
@@ -245,313 +296,55 @@
                 <h2>Galería</h2>
 
                 <p>
-                    Conoce más sobre Sillustani ♡
+                    Videos y fotografías de Sillustani ♡
                 </p>
 
             </div>
 
 
-            <!-- CATEGORÍAS -->
-            <div class="categorias-galeria">
+            <!-- FILTROS: categoría y tipo -->
+            <div class="barra-filtros">
 
-                <a href="#videos-historia" class="categoria activa">
-                    Historia
-                </a>
+                <div class="categorias-galeria" role="group" aria-label="Filtrar por categoría">
+                    <button type="button" class="categoria activa" data-categoria="todas" aria-pressed="true">Todas</button>
+                    <button type="button" class="categoria" data-categoria="Historia" aria-pressed="false">Historia</button>
+                    <button type="button" class="categoria" data-categoria="Cultura" aria-pressed="false">Cultura</button>
+                    <button type="button" class="categoria" data-categoria="Paisajes" aria-pressed="false">Paisajes</button>
+                    <button type="button" class="categoria" data-categoria="Visita" aria-pressed="false">Visita</button>
+                </div>
 
-                <a href="#videos-visita" class="categoria">
-                    Videos
-                </a>
-
-                <a href="#visita" class="categoria">
-                    Lugares
-                </a>
-
-            </div>
-
-
-            <!-- VIDEOS DE HISTORIA -->
-            <div class="cuadricula-videos" id="videos-historia">
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#videos-historia">
-
-                        <img
-                            src="img/collas.jpg"
-                            alt="Ilustración de las chullpas al amanecer"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">09:15</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>¿Quiénes fueron los collas?</h3>
-
-                        <p class="canal">Historia del Altiplano</p>
-
-                        <p class="datos">
-                            15 mil vistas · hace 1 semana
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#videos-historia">
-
-                        <img
-                            src="img/chullpas-incas.jpg"
-                            alt="Chullpas collas e incas de diferentes tamaños"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">14:02</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>
-                            Chullpas collas e incas: ¿en qué se diferencian?
-                        </h3>
-
-                        <p class="canal">Historia del Altiplano</p>
-
-                        <p class="datos">
-                            6,7 mil vistas · hace 2 semanas
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#videos-historia">
-
-                        <img
-                            src="img/lagarto.jpg"
-                            alt="Representación de la chullpa del Lagarto"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">07:48</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>
-                            La chullpa del Lagarto y su figura tallada
-                        </h3>
-
-                        <p class="canal">Puno Arqueológico</p>
-
-                        <p class="datos">
-                            4,1 mil vistas · hace 3 semanas
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#videos-historia">
-
-                        <img
-                            src="img/ritos.jpg"
-                            alt="Representación de chullpas al anochecer"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">11:30</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>Ritos funerarios en el altiplano</h3>
-
-                        <p class="canal">Puno Arqueológico</p>
-
-                        <p class="datos">
-                            3,5 mil vistas · hace 1 mes
-                        </p>
-
-                    </div>
-
-                </article>
+                <div class="filtro-tipo">
+                    <label for="filtro-tipo">Tipo</label>
+                    <select id="filtro-tipo">
+                        <option value="todos">Videos y fotos</option>
+                        <option value="Video">Solo videos</option>
+                        <option value="Foto">Solo fotografías</option>
+                    </select>
+                </div>
 
             </div>
 
+            <p class="contador-resultados" id="contador-resultados" role="status" aria-live="polite"></p>
 
-            <!-- VIDEOS DE VISITA -->
-            <div class="subtitulo-galeria" id="videos-visita">
+            <!-- Las tarjetas se generan desde js/script.js -->
+            <div class="cuadricula-videos" id="catalogo"></div>
 
-                <h3>Descubre nuestros paisajes</h3>
+            <p class="sin-resultados" id="sin-resultados" hidden>
+                No se encontraron recursos con esos filtros.
+                <button type="button" class="boton-texto" id="limpiar-filtros">Limpiar filtros</button>
+            </p>
 
-                <p>
-                    Explora los lugares más representativos de Sillustani.
+            <noscript>
+                <p class="sin-resultados">
+                    El catálogo necesita JavaScript activado para mostrarse.
                 </p>
-
-            </div>
-
-
-            <div class="cuadricula-videos">
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#visita">
-
-                        <img
-                            src="img/como-llegar.jpg"
-                            alt="Camino hacia las chullpas de Sillustani"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">06:45</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>Cómo llegar a Sillustani desde Puno</h3>
-
-                        <p class="canal">Rutas de Puno</p>
-
-                        <p class="datos">
-                            9,3 mil vistas · hace 5 días
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#visita">
-
-                        <img
-                            src="img/atardecer.jpg"
-                            alt="Atardecer sobre la laguna Umayo"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">04:20</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>Atardecer en la laguna Umayo</h3>
-
-                        <p class="canal">Sillustani Videos</p>
-
-                        <p class="datos">
-                            21 mil vistas · hace 2 semanas
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#visita">
-
-                        <img
-                            src="img/artesania.jpg"
-                            alt="Artesanía y textiles de la región Puno"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">10:05</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>
-                            Artesanía y textiles a la entrada del complejo
-                        </h3>
-
-                        <p class="canal">Hecho en Puno</p>
-
-                        <p class="datos">
-                            5,9 mil vistas · hace 1 mes
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-video">
-
-                    <a class="miniatura" href="#visita">
-
-                        <img
-                            src="img/consejos.jpg"
-                            alt="Paisaje del Complejo Arqueológico de Sillustani"
-                            width="640"
-                            height="360"
-                            loading="lazy"
-                        >
-
-                        <span class="duracion">08:20</span>
-
-                    </a>
-
-                    <div class="informacion-video">
-
-                        <h3>
-                            Consejos para tu visita: altura, clima y abrigo
-                        </h3>
-
-                        <p class="canal">Rutas de Puno</p>
-
-                        <p class="datos">
-                            2,8 mil vistas · hace 2 meses
-                        </p>
-
-                    </div>
-
-                </article>
-
-            </div>
+            </noscript>
 
         </section>
 
 
         <!-- =====================================
-             4. VISITA SILLUSTANI
+             4. VISITA SILLUSTANI  (RF-04 / HU-04)
         ====================================== -->
 
         <section class="seccion visita" id="visita">
@@ -563,7 +356,7 @@
                 <h2>Visita Sillustani</h2>
 
                 <p>
-                    Vive una experiencia inolvidable en el Altiplano.
+                    Información práctica para planificar tu recorrido.
                 </p>
 
             </div>
@@ -581,8 +374,13 @@
                         histórico y cultural de Sillustani.
                     </p>
 
-                    <a href="#contacto" class="boton-principal">
-                        Más información →
+                    <a
+                        href="https://www.google.com/maps/search/?api=1&query=Complejo+Arqueologico+de+Sillustani"
+                        class="boton-principal"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Ver ubicación en el mapa <span aria-hidden="true">↗</span>
                     </a>
 
                 </div>
@@ -601,6 +399,42 @@
                 </div>
 
             </div>
+
+
+            <div class="info-visita">
+
+                <article class="tarjeta-info">
+                    <h4>📍 Ubicación y acceso</h4>
+                    <ul>
+                        <li>Distrito de Atuncolla, Puno.</li>
+                        <li>A unos 31 km de la ciudad de Puno, por carretera.</li>
+                        <li>Transporte, horarios y tarifas: <strong>por confirmar</strong> con el responsable del sitio.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-info">
+                    <h4>🥾 Recorridos</h4>
+                    <ul>
+                        <li>Ruta corta: aproximadamente 1 800 m.</li>
+                        <li>Ruta larga: aproximadamente 3 860 m. Una guía técnica del MEF indicó que presentaba dificultades de tránsito y no se usaba en ese momento; consulta su estado antes de ir.</li>
+                    </ul>
+                </article>
+
+                <article class="tarjeta-info">
+                    <h4>🧥 Recomendaciones</h4>
+                    <ul>
+                        <li>Lleva ropa de abrigo y por capas: el clima del altiplano cambia rápido.</li>
+                        <li>Usa protector solar, sombrero y calzado cómodo.</li>
+                        <li>Lleva agua y date tiempo para aclimatarte a la altura.</li>
+                    </ul>
+                </article>
+
+            </div>
+
+            <p class="aviso-verificar">
+                Información de acceso y recomendaciones de carácter general:
+                se verificará con el responsable del sitio antes de la publicación.
+            </p>
 
         </section>
 
@@ -623,75 +457,8 @@
 
             </div>
 
-
-            <div class="contenedor-noticias">
-
-
-                <article class="tarjeta-noticia">
-
-                    <img
-                        src="img/artesania.jpg"
-                        alt="Artesanía y expresiones culturales de Puno"
-                        width="640"
-                        height="360"
-                        loading="lazy"
-                    >
-
-                    <div class="contenido-noticia">
-
-                        <h3>Festival Cultural en Sillustani</h3>
-
-                        <p>
-                            Vive nuestra tradición con danzas típicas,
-                            música andina y expresiones culturales
-                            de nuestra región.
-                        </p>
-
-                        <p class="fecha-noticia">
-                            ▣ 15 de agosto de 2026
-                        </p>
-
-                        <a href="#contacto" class="boton-noticia">
-                            Leer más →
-                        </a>
-
-                    </div>
-
-                </article>
-
-
-                <article class="tarjeta-noticia">
-
-                    <img
-                        src="img/atardecer.jpg"
-                        alt="Atardecer en la laguna Umayo"
-                        width="640"
-                        height="360"
-                        loading="lazy"
-                    >
-
-                    <div class="contenido-noticia">
-
-                        <h3>La belleza de la laguna Umayo</h3>
-
-                        <p>
-                            Descubre uno de los paisajes más representativos
-                            del Complejo Arqueológico de Sillustani.
-                        </p>
-
-                        <p class="fecha-noticia">
-                            ▣ Información cultural
-                        </p>
-
-                        <a href="#visita" class="boton-noticia">
-                            Leer más →
-                        </a>
-
-                    </div>
-
-                </article>
-
-            </div>
+            <!-- Las noticias se generan desde js/script.js -->
+            <div class="contenedor-noticias" id="contenedor-noticias"></div>
 
         </section>
 
@@ -745,13 +512,10 @@
                     method="post"
                 >
 
-
                     <div class="campo">
-
                         <label for="nombre">
                             Nombre completo <span>*</span>
                         </label>
-
                         <input
                             type="text"
                             id="nombre"
@@ -762,16 +526,12 @@
                             autocomplete="name"
                             required
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="correo">
                             Correo electrónico <span>*</span>
                         </label>
-
                         <input
                             type="email"
                             id="correo"
@@ -781,57 +541,26 @@
                             autocomplete="email"
                             required
                         >
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="tipo-consulta">
                             Tipo de consulta <span>*</span>
                         </label>
-
-                        <select
-                            id="tipo-consulta"
-                            name="tipo-consulta"
-                            required
-                        >
-
-                            <option value="">
-                                Selecciona una opción
-                            </option>
-
-                            <option value="informacion">
-                                Información general
-                            </option>
-
-                            <option value="historia">
-                                Historia y cultura
-                            </option>
-
-                            <option value="visita">
-                                Información para visitar
-                            </option>
-
-                            <option value="galeria">
-                                Videos y galería
-                            </option>
-
-                            <option value="otro">
-                                Otro
-                            </option>
-
+                        <select id="tipo-consulta" name="tipo-consulta" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="informacion">Información general</option>
+                            <option value="historia">Historia y cultura</option>
+                            <option value="visita">Información para visitar</option>
+                            <option value="galeria">Videos y galería</option>
+                            <option value="otro">Otro</option>
                         </select>
-
                     </div>
 
-
                     <div class="campo">
-
                         <label for="mensaje">
                             Mensaje <span>*</span>
                         </label>
-
                         <textarea
                             id="mensaje"
                             name="mensaje"
@@ -841,30 +570,18 @@
                             rows="4"
                             required
                         ></textarea>
-
                     </div>
 
-
                     <div class="privacidad">
-
-                        <input
-                            type="checkbox"
-                            id="aceptar"
-                            name="aceptar"
-                            required
-                        >
-
+                        <input type="checkbox" id="aceptar" name="aceptar" required>
                         <label for="aceptar">
                             Acepto la política de privacidad.
                         </label>
-
                     </div>
-
 
                     <button type="submit" class="boton-enviar">
                         ➤ Enviar mensaje
                     </button>
-
 
                     <p
                         class="mensaje-resultado"
@@ -872,7 +589,6 @@
                         role="status"
                         aria-live="polite"
                     ></p>
-
 
                     <p class="nota-formulario">
                         Los campos marcados con (*) son obligatorios.
@@ -895,7 +611,6 @@
 
         <div class="contenido-footer">
 
-
             <!-- IDENTIDAD -->
             <div class="footer-marca">
 
@@ -905,8 +620,11 @@
                     Historia, cultura y patrimonio del altiplano peruano.
                 </p>
 
-            </div>
+                <button type="button" class="boton-admin" id="abrir-admin">
+                    🔒 Acceso administrador
+                </button>
 
+            </div>
 
             <!-- INTEGRANTES -->
             <div class="footer-integrantes">
@@ -914,36 +632,19 @@
                 <h3>Equipo de desarrollo</h3>
 
                 <p>Leydi Yesenia Coaquira Zapana</p>
-
                 <p>Gisela Betancur Vilca</p>
-
                 <p>Katherine Yemile Villasante Quispe</p>
 
             </div>
-
 
             <!-- CONTACTOS -->
             <div class="footer-contactos">
 
                 <h3>Correos de contacto</h3>
 
-                <p>
-                    <a href="mailto:lcoaquirazapana@gmail.com">
-                        lcoaquirazapana@gmail.com
-                    </a>
-                </p>
-
-                <p>
-                    <a href="mailto:gbetancurvilca@gmail.com">
-                        gbetancurvilca@gmail.com
-                    </a>
-                </p>
-
-                <p>
-                    <a href="mailto:kathetuquispe@gmail.com">
-                        kathetuquispe@gmail.com
-                    </a>
-                </p>
+                <p><a href="mailto:lcoaquirazapana@gmail.com">lcoaquirazapana@gmail.com</a></p>
+                <p><a href="mailto:gbetancurvilca@gmail.com">gbetancurvilca@gmail.com</a></p>
+                <p><a href="mailto:kathetuquispe@gmail.com">kathetuquispe@gmail.com</a></p>
 
             </div>
 
@@ -953,26 +654,115 @@
         <!-- DERECHOS Y CRÉDITOS -->
         <div class="copyright">
 
-            <p>
-                Desarrollo Basado en Plataformas I (SIS302) · UNA-Puno
-            </p>
+            <p>Desarrollo Basado en Plataformas I (SIS302) · UNA-Puno</p>
 
-            <p>
-                Las vistas, fechas y canales son ficticios,
-                con fines didácticos.
-            </p>
+            <p>Las vistas, fechas y canales son ficticios, con fines didácticos.</p>
 
-            <p>
-                Fuente de las imágenes: ilustraciones propias.
-            </p>
+            <p>Fuente de las imágenes: ilustraciones propias.</p>
 
-            <p>
-                © 2026 Sillustani Videos. Todos los derechos reservados.
-            </p>
+            <p>© 2026 Sillustani Videos. Todos los derechos reservados.</p>
 
         </div>
 
     </footer>
+
+
+    <!-- =========================================
+         VISOR DE FOTOS Y VIDEOS  (RF-03 / HU-03)
+    ========================================== -->
+
+    <dialog id="visor" class="dialogo dialogo-visor" aria-labelledby="visor-titulo">
+
+        <div class="dialogo-cabecera">
+            <p class="visor-categoria" id="visor-categoria"></p>
+            <button type="button" class="cerrar-dialogo" data-cerrar aria-label="Cerrar visor">✕</button>
+        </div>
+
+        <div class="visor-media" id="visor-media"></div>
+
+        <div class="visor-texto">
+            <h2 id="visor-titulo"></h2>
+            <p class="visor-meta" id="visor-meta"></p>
+            <p id="visor-descripcion"></p>
+        </div>
+
+        <div class="visor-navegacion">
+            <button type="button" class="boton-texto" id="visor-anterior">← Anterior</button>
+            <span id="visor-posicion" aria-live="polite"></span>
+            <button type="button" class="boton-texto" id="visor-siguiente">Siguiente →</button>
+        </div>
+
+    </dialog>
+
+
+    <!-- =========================================
+         INICIO DE SESIÓN DEL ADMINISTRADOR  (RF-05)
+    ========================================== -->
+
+    <dialog id="dialogo-login" class="dialogo dialogo-login" aria-labelledby="login-titulo">
+
+        <div class="dialogo-cabecera">
+            <h2 id="login-titulo">Acceso administrador</h2>
+            <button type="button" class="cerrar-dialogo" data-cerrar aria-label="Cerrar">✕</button>
+        </div>
+
+        <form id="form-login" autocomplete="off">
+
+            <div class="campo">
+                <label for="login-usuario">Usuario</label>
+                <input type="text" id="login-usuario" name="usuario" autocomplete="username" required>
+            </div>
+
+            <div class="campo">
+                <label for="login-clave">Contraseña</label>
+                <input type="password" id="login-clave" name="clave" autocomplete="current-password" required>
+            </div>
+
+            <button type="submit" class="boton-enviar">Ingresar</button>
+
+            <p class="mensaje-error" id="login-error" role="alert"></p>
+
+        </form>
+
+    </dialog>
+
+
+    <!-- =========================================
+         PANEL DE ADMINISTRACIÓN  (RF-05 / HU-05)
+    ========================================== -->
+
+    <dialog id="dialogo-admin" class="dialogo dialogo-ancho" aria-labelledby="admin-titulo">
+
+        <div class="dialogo-cabecera">
+            <h2 id="admin-titulo">Panel de administración</h2>
+            <div class="acciones-cabecera">
+                <button type="button" class="boton-texto" id="cerrar-sesion">Cerrar sesión</button>
+                <button type="button" class="cerrar-dialogo" data-cerrar aria-label="Cerrar panel">✕</button>
+            </div>
+        </div>
+
+        <div class="pestanas" role="group" aria-label="Qué deseas administrar">
+            <button type="button" class="pestana activa" data-coleccion="recursos" aria-pressed="true">Videos y fotos</button>
+            <button type="button" class="pestana" data-coleccion="noticias" aria-pressed="false">Noticias</button>
+        </div>
+
+        <div class="admin-cuerpo">
+
+            <section class="admin-lista" aria-labelledby="admin-lista-titulo">
+                <h3 id="admin-lista-titulo"></h3>
+                <ul id="lista-admin"></ul>
+                <button type="button" class="boton-texto peligro" id="restaurar">Restaurar contenido original</button>
+            </section>
+
+            <section class="admin-formulario" aria-labelledby="admin-form-titulo">
+                <h3 id="admin-form-titulo"></h3>
+                <form id="form-admin"></form>
+                <p class="mensaje-resultado" id="mensaje-admin" role="status" aria-live="polite"></p>
+            </section>
+
+        </div>
+
+    </dialog>
 
 
     <!-- =========================================
